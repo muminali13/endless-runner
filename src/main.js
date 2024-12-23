@@ -34,16 +34,26 @@ k.loadFont("mania", "fonts/mania.ttf");
 
 k.loadSound("destroy", "sounds/Destroy.wav");
 k.loadSound("hurt", "sounds/Hurt.wav");
-k.loadSound("city", "sounds/city.wav");
+k.loadSound("city", "sounds/city.mp3");
 k.loadSound("hyper-ring", "sounds/HyperRing.wav");
 k.loadSound("jump", "sounds/Jump.wav");
 k.loadSound("ring", "sounds/Ring.wav");
+
+if (!k.getData("hi-score")) {
+    k.setData("hi-score", 0);
+}
+if (!k.getData("hi-rank")) {
+    k.setData("hi-rank", 'F');
+}
+// k.setData("hi-score", 0);
+// k.setData("hi-rank", 'F');
+// k.setData("current-score", 0);
 
 k.scene("main-menu", mainMenu)
 k.scene("game", game)
 k.scene("game-over", gameOver)
 
-k.go("main-menu")
+k.go("main-menu");
 
 
 

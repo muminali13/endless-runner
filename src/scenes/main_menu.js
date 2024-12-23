@@ -4,9 +4,6 @@ import background from "./background.js";
 
 
 export default function mainMenu() {
-    if (!k.getData("hi-score")) {
-        k.setData("hi-score", 0);
-    }
 
     k.onButtonDown("jump", () => k.go("game"))
 

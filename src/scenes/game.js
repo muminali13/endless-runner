@@ -7,7 +7,7 @@ import makeRing from "../entities/ring.js";
 export default function game() {
     k.setGravity(3100);
 
-    const citySound = k.play("citySound", {volume: 0.2, loop: true});
+    const citySound = k.play("city", {volume: 0.6, loop: true});
 
     const bg = new background()
 
@@ -46,12 +46,12 @@ export default function game() {
         k.play("hurt")
 
         k.setData("current-score", score)
-        k.go("game-over")
+        k.go("game-over", citySound)
 
     })
     sonic.onCollide("ring", (ring) => {
 
-        k.play("ring", {volume: 0.5})
+        k.play("ring", { volume: 0.5 })
         k.destroy(ring)
         score += 1
         scoreText.text = "SCORE: " + score;
